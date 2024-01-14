@@ -53,7 +53,7 @@ async def getFile(ctx, movie):
     # ID = code[2:len(code)]
     # print(ID) (Keeping this here incase code no work)
     
-    ID = (movie.split("/")[4])[2:len(movie.split("/")[4])]  # (A single line solution for the code above)
+    ID = (movie.split("/")[4])[2:]  # (A single line solution for the code above)
     
     payload = {'imdb_id': ID}
     response = requests.get(api_url,params=payload)
