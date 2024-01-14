@@ -22,7 +22,7 @@ THIS PROGRAM ALONE DOES NOT ALLOW PIRACY, IT NEEDS VARIOUS OTHER DATA SOURCES
   ```
   TOKEN = '' (Discord token)
   TRACKERS = '' (e.g. &trudp://tracker.one:1234/announce&trudp://tracker.two:4321/announce) Note: Separated by &tr
-  API_URL = ''
+  API_URL = '' (Cannot be provided due to piracy laws and potential Github takedowns)
   SAVEDIR = '' e.g. C:\ThisFolder
   USER = '' (This is the WebUI username for QBittorrent)
   PASSWORD = '' (This is the WebUI password for QBittorrent)
