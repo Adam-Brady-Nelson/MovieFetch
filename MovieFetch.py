@@ -65,8 +65,8 @@ async def getFile(ctx, movie):
 
     count = 1
     for i in jsonRes['data']['movie']['torrents']:
-        temp = str(count) + ". " + str(i['quality']) + " - " + str(i['size']) + " - " + str(i['video_codec']) + " - " + str(i['type'])
-        await ctx.channel.send(temp)
+        qualityDisplay = str(count) + ". " + str(i['quality']) + " - " + str(i['size']) + " - " + str(i['video_codec']) + " - " + str(i['type'])
+        await ctx.channel.send(qualityDisplay)
         count+=1
     try:
         await ctx.channel.send("Waiting for response...\nEnter the corresponding number for quality (0 will cancel the operation): ")
