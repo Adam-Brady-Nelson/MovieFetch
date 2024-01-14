@@ -29,7 +29,7 @@ async def ping(ctx):
 @commands.has_permissions(administrator=True)
 async def purge(ctx):
     amount = 100
-    await ctx.channel.send("Purging..... The bot might free for a moment while this completes")
+    await ctx.channel.send("Purging..... The bot might freeze for a moment while this completes")
     await ctx.channel.purge(limit = amount + 1)  
 
 @client.command(name='get')
