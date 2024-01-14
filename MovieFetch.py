@@ -30,7 +30,7 @@ async def ping(ctx):
 async def purge(ctx):
     amount = 100
     await ctx.channel.send("Purging..... The bot might free for a moment while this completes")
-    await ctx.channel.purge(limit= amount + 1)  
+    await ctx.channel.purge(limit = amount + 1)  
 
 @client.command(name='get')
 async def getFile(ctx, movie):
@@ -47,10 +47,13 @@ async def getFile(ctx, movie):
 
     api_url = os.getenv('API_URL')
     trackers = os.getenv('TRACKERS')
-    linkSplit = movie.split("/")
-    code = str(linkSplit[4])
-    ID = code[2:len(code)]
-    print(ID)
+    
+    # linkSplit = movie.split("/")
+    # code = str(linkSplit[4])
+    # ID = code[2:len(code)]
+    # print(ID) (Keeping this here incase code no work)
+    
+    ID = (movie.split("/")[4])[2:len(movie.split("/")[4])]  # (A single line solution for the code above)
     
     payload = {'imdb_id': ID}
     response = requests.get(api_url,params=payload)
@@ -78,7 +81,6 @@ async def getFile(ctx, movie):
             return
         try:
             hashCode = jsonRes['data']['movie']['torrents'][qualitySelection]['hash']
-        
             magnet = "magnet:?xt=urn:btih:" + hashCode + trackers
             dl_path = os.getenv('SAVEDIR')
             qb.download_from_link(magnet, savepath = dl_path)
