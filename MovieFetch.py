@@ -48,11 +48,6 @@ async def getFile(ctx, movie):
     api_url = os.getenv('API_URL')
     trackers = os.getenv('TRACKERS')
     
-    # linkSplit = movie.split("/")
-    # code = str(linkSplit[4])
-    # ID = code[2:len(code)]
-    # print(ID) (Keeping this here incase code no work)
-    
     ID = (movie.split("/")[4])[2:]  # (A single line solution for the code above)
     
     payload = {'imdb_id': ID}
