@@ -48,7 +48,7 @@ async def getFile(ctx, movie):
     api_url = os.getenv('API_URL')
     trackers = os.getenv('TRACKERS')
     
-    ID = (movie.split("/")[4])[2:]  # (A single line solution for the code above)
+    ID = (movie.split("/")[4])[2:]
     
     payload = {'imdb_id': ID}
     response = requests.get(api_url,params=payload)
